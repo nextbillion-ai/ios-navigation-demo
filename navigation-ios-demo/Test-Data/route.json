@@ -1,0 +1,265 @@
+{
+    "geometry": "{mjagAjqenhFDh@|Dbk@xFby@|Dk@zCc@hRcCnZqD_BgWc@oHw@eNwBiZgAiPa@wF",
+    "distance": 396.1,
+    "duration": 138.5,
+    "weight": 138.5,
+    "start_location": {
+        "latitude": 377.87374,
+        "longitude": -1224.0823
+    },
+    "end_location": {
+        "latitude": 377.86436,
+        "longitude": -1224.08071
+    },
+    "legs": [{
+        "distance": {
+            "value": 396
+        },
+        "duration": {
+            "value": 138
+        },
+        "start_location": {
+            "latitude": 377.87374,
+            "longitude": -1224.0823
+        },
+        "end_location": {
+            "latitude": 377.86436,
+            "longitude": -1224.08071
+        },
+        "steps": [{
+            "geometry": "{mjagAjqenhFDh@|Dbk@xFby@",
+            "start_location": {
+                "latitude": 377.87374,
+                "longitude": -1224.0823
+            },
+            "end_location": {
+                "latitude": 377.87151,
+                "longitude": -1224.09887
+            },
+            "distance": {
+                "value": 147
+            },
+            "duration": {
+                "value": 45
+            },
+            "maneuver": {
+                "instruction": "Head west on Geary St",
+                "voice_instruction": [],
+                "bearing_before": 0,
+                "bearing_after": 260,
+                "coordinate": {
+                    "latitude": 37.787374,
+                    "longitude": -122.40823
+                },
+                "maneuver_type": "depart"
+            },
+            "name": "Geary St",
+            "intersections": [{
+                "location": {
+                    "latitude": 37.787374,
+                    "longitude": -122.40823
+                },
+                "bearings": [260],
+                "classes": [],
+                "entry": [],
+                "intersection_in": 0,
+                "intersection_out": 0,
+                "lanes": []
+            }, {
+                "location": {
+                    "latitude": 37.787371,
+                    "longitude": -122.408251
+                },
+                "bearings": [75, 165, 255, 345],
+                "classes": [],
+                "entry": [],
+                "intersection_in": 0,
+                "intersection_out": 2,
+                "lanes": [{
+                    "indications": ["none"],
+                    "valid": true
+                }, {
+                    "indications": ["none"],
+                    "valid": true
+                }, {
+                    "indications": ["none"],
+                    "valid": true
+                }, {
+                    "indications": ["right"],
+                    "valid": false
+                }]
+            }],
+            "road_shield_type": {}
+        }, {
+            "geometry": "}_jagA|xhnhF|Dk@zCc@hRcCnZqD",
+            "start_location": {
+                "latitude": 377.87151,
+                "longitude": -1224.09887
+            },
+            "end_location": {
+                "latitude": 377.86229,
+                "longitude": -1224.09692
+            },
+            "distance": {
+                "value": 104
+            },
+            "duration": {
+                "value": 46
+            },
+            "maneuver": {
+                "instruction": "Turn left onto Mason St",
+                "voice_instruction": [{
+                    "distance_along_geometry": 160,
+                    "unit": "feet",
+                    "instruction": "Turn left onto Mason St"
+                }],
+                "bearing_before": 260,
+                "bearing_after": 168,
+                "coordinate": {
+                    "latitude": 37.787151,
+                    "longitude": -122.409887
+                },
+                "maneuver_type": "turn",
+                "modifier": "left"
+            },
+            "name": "Mason St",
+            "intersections": [{
+                "location": {
+                    "latitude": 37.787151,
+                    "longitude": -122.409887
+                },
+                "bearings": [75, 165, 255, 345],
+                "classes": [],
+                "entry": [],
+                "intersection_in": 0,
+                "intersection_out": 1,
+                "lanes": []
+            }, {
+                "location": {
+                    "latitude": 37.786669,
+                    "longitude": -122.409781
+                },
+                "bearings": [75, 165, 345],
+                "classes": [],
+                "entry": [],
+                "intersection_in": 2,
+                "intersection_out": 1,
+                "lanes": []
+            }],
+            "road_shield_type": {}
+        }, {
+            "geometry": "ifhagAvlhnhF_BgWc@oHw@eNwBiZgAiPa@wF",
+            "start_location": {
+                "latitude": 377.86229,
+                "longitude": -1224.09692
+            },
+            "end_location": {
+                "latitude": 377.86436,
+                "longitude": -1224.08071
+            },
+            "distance": {
+                "value": 144
+            },
+            "duration": {
+                "value": 45
+            },
+            "maneuver": {
+                "instruction": "Turn left onto O'Farrell St",
+                "voice_instruction": [{
+                    "distance_along_geometry": 160,
+                    "unit": "feet",
+                    "instruction": "Turn left onto O'Farrell St"
+                }],
+                "bearing_before": 170,
+                "bearing_after": 80,
+                "coordinate": {
+                    "latitude": 37.786229,
+                    "longitude": -122.409692
+                },
+                "maneuver_type": "turn",
+                "modifier": "left"
+            },
+            "name": "O'Farrell St",
+            "intersections": [{
+                "location": {
+                    "latitude": 37.786229,
+                    "longitude": -122.409692
+                },
+                "bearings": [75, 165, 255, 345],
+                "classes": [],
+                "entry": [],
+                "intersection_in": 3,
+                "intersection_out": 0,
+                "lanes": []
+            }, {
+                "location": {
+                    "latitude": 37.786277,
+                    "longitude": -122.409304
+                },
+                "bearings": [75, 255, 345],
+                "classes": [],
+                "entry": [],
+                "intersection_in": 1,
+                "intersection_out": 0,
+                "lanes": []
+            }, {
+                "location": {
+                    "latitude": 37.786323,
+                    "longitude": -122.408909
+                },
+                "bearings": [75, 180, 255],
+                "classes": [],
+                "entry": [],
+                "intersection_in": 2,
+                "intersection_out": 0,
+                "lanes": []
+            }],
+            "road_shield_type": {}
+        }, {
+            "geometry": "gshagAlgenhF",
+            "start_location": {
+                "latitude": 377.86436,
+                "longitude": -1224.08071
+            },
+            "end_location": {
+                "latitude": 377.86436,
+                "longitude": -1224.08071
+            },
+            "distance": {
+                "value": 0
+            },
+            "duration": {
+                "value": 0
+            },
+            "maneuver": {
+                "instruction": "You have arrived at O'Farrell St",
+                "voice_instruction": [{
+                    "distance_along_geometry": 160,
+                    "unit": "feet",
+                    "instruction": "You have arrived at O'Farrell St"
+                }],
+                "bearing_before": 80,
+                "bearing_after": 0,
+                "coordinate": {
+                    "latitude": 37.786436,
+                    "longitude": -122.408071
+                },
+                "maneuver_type": "arrive"
+            },
+            "name": "O'Farrell St",
+            "intersections": [{
+                "location": {
+                    "latitude": 37.786436,
+                    "longitude": -122.408071
+                },
+                "bearings": [260],
+                "classes": [],
+                "entry": [],
+                "intersection_in": 0,
+                "intersection_out": 0,
+                "lanes": []
+            }],
+            "road_shield_type": {}
+        }]
+    }]
+}
