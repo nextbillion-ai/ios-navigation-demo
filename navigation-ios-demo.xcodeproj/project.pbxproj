@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4190C4982A83E7BA00C41DD2 /* Arrive-Waypoints-Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4190C4962A83E7BA00C41DD2 /* Arrive-Waypoints-Destination.swift */; };
+		4190C4992A83E7BA00C41DD2 /* WaypointConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4190C4972A83E7BA00C41DD2 /* WaypointConfirmationViewController.swift */; };
 		41945873299C9DEE005084B3 /* Nbmap.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41945869299C9DD8005084B3 /* Nbmap.xcframework */; };
 		41945874299C9DEE005084B3 /* Nbmap.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41945869299C9DD8005084B3 /* Nbmap.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41945876299C9DEF005084B3 /* NbmapCoreNavigation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4194586D299C9DD8005084B3 /* NbmapCoreNavigation.xcframework */; };
@@ -93,6 +95,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4190C4962A83E7BA00C41DD2 /* Arrive-Waypoints-Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Arrive-Waypoints-Destination.swift"; sourceTree = "<group>"; };
+		4190C4972A83E7BA00C41DD2 /* WaypointConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaypointConfirmationViewController.swift; sourceTree = "<group>"; };
 		41945869299C9DD8005084B3 /* Nbmap.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Nbmap.xcframework; path = Carthage/Build/Nbmap.xcframework; sourceTree = "<group>"; };
 		4194586A299C9DD8005084B3 /* NbmapDirections.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NbmapDirections.xcframework; path = Carthage/Build/NbmapDirections.xcframework; sourceTree = "<group>"; };
 		4194586B299C9DD8005084B3 /* NbmapNavigation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NbmapNavigation.xcframework; path = Carthage/Build/NbmapNavigation.xcframework; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				41F4D8DD296FC7BB008131C4 /* Main.storyboard */,
 				41F4D8E0296FC7BB008131C4 /* Assets.xcassets */,
 				41F4D8E2296FC7BB008131C4 /* LaunchScreen.storyboard */,
+				4190C4962A83E7BA00C41DD2 /* Arrive-Waypoints-Destination.swift */,
+				4190C4972A83E7BA00C41DD2 /* WaypointConfirmationViewController.swift */,
 				41F4D8E5296FC7BB008131C4 /* Info.plist */,
 				41AE0F0129EE8B8400E6233F /* MainViewController.swift */,
 				41AE0F0329EE932E00E6233F /* ViewMode.swift */,
@@ -448,6 +454,7 @@
 				5E73422A2A1231730068A534 /* CustomizeMapStyleViewController.swift in Sources */,
 				41AE0F3729F512F200E6233F /* Custom-Waypoints-Screen.swift in Sources */,
 				41AE0F0229EE8B8400E6233F /* MainViewController.swift in Sources */,
+				4190C4982A83E7BA00C41DD2 /* Arrive-Waypoints-Destination.swift in Sources */,
 				41AE0F2C29F178D600E6233F /* Custom-Map-LocationSource.swift in Sources */,
 				41AE0F1C29EFD36100E6233F /* CustomTopBarViewController.swift in Sources */,
 				41AE0F0829EE9BF300E6233F /* AdvancedNavigationViewController.swift in Sources */,
@@ -458,6 +465,7 @@
 				41AE0F2329EFFFFC00E6233F /* Route-Initialization.swift in Sources */,
 				5E73422C2A1236E40068A534 /* InterceptClickEventViewController.swift in Sources */,
 				41AE0F0A29EE9C2C00E6233F /* Custom-RoutingProvider.swift in Sources */,
+				4190C4992A83E7BA00C41DD2 /* WaypointConfirmationViewController.swift in Sources */,
 				41AE0F2729F124E300E6233F /* Custom-Route-Lines-Styling.swift in Sources */,
 				41AE0F3029F22CF900E6233F /* Styled-UI-Elements.swift in Sources */,
 				41AE0F0629EE9B6B00E6233F /* BasicNavigationViewController.swift in Sources */,
@@ -637,6 +645,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
