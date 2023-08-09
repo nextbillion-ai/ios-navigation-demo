@@ -31,6 +31,7 @@ class MainViewController : UITableViewController {
         ViewMode(name: "Custom UI Elements", viewCongtroller: CustomUIElementsViewController.self),
         ViewMode(name: "Custom Waypoint screen", viewCongtroller: CustomWaypointScreenController.self),
         ViewMode(name: "Simulation mode", viewCongtroller: SimulationNavigationViewController.self),
+        ViewMode(name: "Arrive waypoints and dextination", viewCongtroller: ArriveNavigationViewController.self),
         
         
     ]
