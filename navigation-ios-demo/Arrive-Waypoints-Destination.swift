@@ -61,6 +61,9 @@ class ArriveNavigationViewController: UIViewController {
 
 extension ArriveNavigationViewController : NavigationViewControllerDelegate {
     
+    /**
+     Call back for user arrvive each waypoints and dextination
+     */
     func navigationViewController(_ navigationViewController: NavigationViewController, didArriveAt waypoint: Waypoint) -> Bool{
         print("didArriveAt : \(waypoint.description)")
         // When the user arrives, present a view controller that prompts the user to continue to their next destination
@@ -80,6 +83,15 @@ extension ArriveNavigationViewController : NavigationViewControllerDelegate {
         navigationViewController.present(confirmationController, animated: true, completion: nil)
         return false
     }
+    
+    /**
+     Call back for user on tap the exit button 
+     */
+    func navigationViewControllerDidDismiss(_ navigationViewController: NavigationViewController, byCanceling canceled: Bool) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 // MARK: WaypointConfirmationViewControllerDelegate
