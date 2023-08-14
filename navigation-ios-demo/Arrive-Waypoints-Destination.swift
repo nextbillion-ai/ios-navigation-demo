@@ -64,28 +64,26 @@ extension ArriveNavigationViewController : NavigationViewControllerDelegate {
     /**
      Call back for user arrvive each waypoints and dextination
      */
-    func navigationViewController(_ navigationViewController: NavigationViewController, didArriveAt waypoint: Waypoint) -> Bool{
-        print("didArriveAt : \(waypoint.description)")
-        // When the user arrives, present a view controller that prompts the user to continue to their next destination
-        // This type of screen could show information about a destination, pickup/dropoff confirmation, instructions upon arrival, etc.
-        
-        //Arrived destination , If we're not in a "Multiple Stops" demo, show the normal EORVC
-        if navigationViewController.navigationService.router.routeProgress.isFinalLeg {
+    func navigationViewController(_ navigationViewController: NavigationViewController, didArriveAt waypoint: Waypoint) -> Bool {
+        let isFinalLeg = navigationViewController.navigationService.routeProgress.isFinalLeg
+        if isFinalLeg {
             return true
         }
         
-        guard let confirmationController = self.storyboard?.instantiateViewController(withIdentifier: "waypointConfirmation") as? WaypointConfirmationViewController else {
-            return true
-        }
+        let alert = UIAlertController(title: "Arrived at \(waypoint.name ?? "Unknown").", message: "Would you like to continue?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            // Begin the next leg once the driver confirms
+            guard !isFinalLeg else { return }
+            navigationViewController.navigationService.router.routeProgress.legIndex += 1
+            navigationViewController.navigationService.start()
+        }))
+        navigationViewController.present(alert, animated: true, completion: nil)
         
-        confirmationController.delegate = self
-        
-        navigationViewController.present(confirmationController, animated: true, completion: nil)
         return false
     }
     
     /**
-     Call back for user on tap the exit button 
+     Call back for user on tap the exit button
      */
     func navigationViewControllerDidDismiss(_ navigationViewController: NavigationViewController, byCanceling canceled: Bool) {
         dismiss(animated: true, completion: nil)
@@ -94,15 +92,3 @@ extension ArriveNavigationViewController : NavigationViewControllerDelegate {
     
 }
 
-// MARK: WaypointConfirmationViewControllerDelegate
-extension ArriveNavigationViewController: WaypointConfirmationViewControllerDelegate {
-    func confirmationControllerDidConfirm(_ confirmationController: WaypointConfirmationViewController) {
-        confirmationController.dismiss(animated: true, completion: {
-            guard let navigationViewController = self.presentedViewController as? NavigationViewController else { return }
-            
-            guard navigationViewController.navigationService.router.routeProgress.route.legs.count > navigationViewController.navigationService.router.routeProgress.legIndex + 1 else { return }
-            navigationViewController.navigationService.router.routeProgress.legIndex += 1
-            navigationViewController.navigationService.start()  // todo qiu need to comfirm
-        })
-    }
-}
