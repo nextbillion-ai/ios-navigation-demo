@@ -53,7 +53,10 @@ class CustomWaypointStylingViewController: UIViewController {
         self.navigationMapView = NavigationMapView(frame: view.bounds)
         
         navigationMapView?.userTrackingMode = .follow
+        // Set delegate for navigation map view
         navigationMapView?.navigationMapDelegate = self
+        // Set delegate for NGLMapView
+        navigationMapView?.delegate = self
         setupStartButton()
         requestRoutes()
         
@@ -144,12 +147,13 @@ class CustomWaypointStylingViewController: UIViewController {
     }
     
 }
-
+// MARK: - Implement NavigationViewControllerDelegate to custom waypoint and receive callback from map screen
 extension CustomWaypointStylingViewController: NavigationMapViewDelegate {
     
     func navigationMapView(_ mapView: NavigationMapView, waypointSymbolStyleLayerWithIdentifier identifier: String, waypoints: [Waypoint],source: NGLSource) -> NGLStyleLayer? {
         return customWaypointSymbolStyleLayer(style: mapView.style,identifier: identifier, waypoints: waypoints, source: source)
     }
+
     
     func navigationMapView(_ mapView: NavigationMapView, shapeFor waypoints: [Waypoint], legIndex: Int) -> NGLShape? {
         return customShape(for: waypoints, legIndex: legIndex)
@@ -158,12 +162,33 @@ extension CustomWaypointStylingViewController: NavigationMapViewDelegate {
 
 extension CustomWaypointStylingViewController: NavigationViewControllerDelegate {
     
-    func navigationViewController(_ navigationViewController: NavigationViewController, waypointSymbolStyleLayerWithIdentifier identifier: String, waypoints: [Waypoint] , source: NGLSource) -> NGLStyleLayer? {
-        return customWaypointSymbolStyleLayer(style: navigationViewController.navigationMapView?.style,identifier: identifier, waypoints: waypoints, source: source)
-    }
-    
     func navigationViewController(_ navigationViewController: NavigationViewController, shapeFor waypoints: [Waypoint], legIndex: Int) -> NGLShape? {
         return customShape(for: waypoints, legIndex: legIndex)
     }
     
+    func navigationViewController(_ navigationViewController: NavigationViewController, waypointSymbolStyleLayerWithIdentifier identifier: String, waypoints: [Waypoint] , source: NGLSource) -> NGLStyleLayer? {
+        return customWaypointSymbolStyleLayer(style: navigationViewController.navigationMapView?.style,identifier: identifier, waypoints: waypoints, source: source)
+    }
+    
+    func navigationMapView(_ mapView: NavigationMapView, didSelect waypoint: Waypoint) {
+        let alert = UIAlertController(title: "Did select waypoint", message: "\(waypoint.description)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func navigationMapView(_ mapView: NavigationMapView, didSelect route: Route) {
+        let alert = UIAlertController(title: "Did select route.", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+// MARK: - Implement NGLMapViewDelegate to receive click marker event from the  map screen
+extension CustomWaypointStylingViewController: NGLMapViewDelegate {
+    func mapView(_ mapView: NGLMapView, didSelect annotation: NGLAnnotation) {
+        let alert = UIAlertController(title: "Did select marker \(annotation.description).", message: "\(annotation.coordinate)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
