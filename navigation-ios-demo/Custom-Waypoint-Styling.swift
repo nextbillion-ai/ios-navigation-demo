@@ -35,6 +35,13 @@ class CustomWaypointStylingViewController: UIViewController {
             navigationMapView?.showRoutes(routes)
             navigationMapView?.showWaypoints(current)
             navigationMapView?.showRouteDurationSymbol(routes)
+            
+            guard let newCamera = navigationMapView?.camera else {
+                return
+            }
+            newCamera.centerCoordinate = CLLocationCoordinate2D(latitude: 37.77440680146262, longitude: -122.43539772352648)
+            newCamera.viewingDistance = 1000
+            navigationMapView?.setCamera(newCamera, animated: true)
         }
     }
     
@@ -70,7 +77,7 @@ class CustomWaypointStylingViewController: UIViewController {
         guard let routes = self.routes else {
             return
         }
-        let navigationService = NBNavigationService(routes: routes, routeIndex: 0)
+        let navigationService = NBNavigationService(routes: routes, routeIndex: 0, simulating : simulationIsEnabled ? SimulationMode.always : SimulationMode.inTunnels)
         let styles = [DayStyle(), NightStyle()]
         let navigationOptions = NavigationOptions(styles:styles,navigationService: navigationService)
         
@@ -83,11 +90,11 @@ class CustomWaypointStylingViewController: UIViewController {
     }
     
     func requestRoutes(){
-        let origin = CLLocation(latitude: 37.775252, longitude: -122.416082)
-        let firstWaypoint = CLLocation(latitude: 37.779196, longitude: -122.410833)
-        let secondWaypoint = CLLocation(latitude: 37.777342, longitude: -122.404094)
+        let origin = CLLocation(latitude: 37.77440680146262, longitude: -122.43539772352648)
+        let waypoint = CLLocation(latitude: 37.76856957793795, longitude: -122.42709811526268)
+        let destination = CLLocation(latitude: 37.76556957793795, longitude: -122.42409811526268)
+        let options = NavigationRouteOptions(locations: [origin,waypoint,destination])
         
-        let options = NavigationRouteOptions(locations: [origin,firstWaypoint,secondWaypoint])
         Directions.shared.calculate(options) { [weak self] routes, error in
             guard let weakSelf = self else {
                 return
@@ -111,7 +118,7 @@ class CustomWaypointStylingViewController: UIViewController {
             feature.coordinate = waypoint.coordinate
             feature.attributes = [
                 "waypointCompleted": waypointIndex < legIndex,
-                "name": waypointIndex + 1
+                "name": "waypoint" + String(waypointIndex + 1)
             ]
             features.append(feature)
         }
@@ -119,42 +126,29 @@ class CustomWaypointStylingViewController: UIViewController {
         return NGLShapeCollectionFeature(shapes: features)
     }
     
-    func customWaypointCircleStyleLayer(identifier: String, source: NGLSource) -> NGLStyleLayer {
-        let circles = NGLCircleStyleLayer(identifier: identifier, source: source)
+    func customWaypointSymbolStyleLayer(style: NGLStyle?,identifier: String, waypoints: [Waypoint], source: NGLSource) -> NGLStyleLayer {
+        let circles = NGLSymbolStyleLayer(identifier: identifier, source: source)
         let opacity = NSExpression(forConditional: NSPredicate(format: "waypointCompleted == true"), trueExpression: NSExpression(forConstantValue: 0.5), falseExpression: NSExpression(forConstantValue: 1))
+        circles.iconOpacity = opacity
+        circles.iconImageName = NSExpression(forKeyPath: "name")
         
-        circles.circleColor = NSExpression(forConstantValue: UIColor(red:0.9, green:0.9, blue:0.9, alpha:1.0))
-        circles.circleOpacity = opacity
-        circles.circleRadius = NSExpression(forConstantValue: 10)
-        circles.circleStrokeColor = NSExpression(forConstantValue: UIColor.green)
-        circles.circleStrokeWidth = NSExpression(forConstantValue: 1)
-        circles.circleStrokeOpacity = opacity
+        for (waypointIndex, waypoint) in waypoints.enumerated() {
+            let indexString = String(waypointIndex + 1)
+            let circularView = CustomWaypointStyle(frame: CGRect(x: 0, y: 0, width: 24, height: 24), labelText: indexString)
+            if let circularImage = circularView.captureScreenshot() {
+                style?.setImage(circularImage, forName: "waypoint" + indexString)
+            }
+        }
         
         return circles
-    }
-    
-    func customWaypointSymbolStyleLayer(identifier: String, source: NGLSource) -> NGLStyleLayer {
-        let symbol = NGLSymbolStyleLayer(identifier: identifier, source: source)
-        
-        symbol.text = NSExpression(format: "CAST(name, 'NSString')")
-        symbol.textOpacity = NSExpression(forConditional: NSPredicate(format: "waypointCompleted == true"), trueExpression: NSExpression(forConstantValue: 0.5), falseExpression: NSExpression(forConstantValue: 1))
-        symbol.textFontSize = NSExpression(forConstantValue: 10)
-        symbol.textHaloWidth = NSExpression(forConstantValue: 0.25)
-        symbol.textHaloColor = NSExpression(forConstantValue: UIColor.blue)
-        
-        return symbol
     }
     
 }
 
 extension CustomWaypointStylingViewController: NavigationMapViewDelegate {
     
-    func navigationMapView(_ mapView: NavigationMapView, waypointStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
-        return customWaypointCircleStyleLayer(identifier: identifier, source: source)
-    }
-    
-    func navigationMapView(_ mapView: NavigationMapView, waypointSymbolStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
-        return customWaypointSymbolStyleLayer(identifier: identifier, source: source)
+    func navigationMapView(_ mapView: NavigationMapView, waypointSymbolStyleLayerWithIdentifier identifier: String, waypoints: [Waypoint],source: NGLSource) -> NGLStyleLayer? {
+        return customWaypointSymbolStyleLayer(style: mapView.style,identifier: identifier, waypoints: waypoints, source: source)
     }
     
     func navigationMapView(_ mapView: NavigationMapView, shapeFor waypoints: [Waypoint], legIndex: Int) -> NGLShape? {
@@ -163,12 +157,9 @@ extension CustomWaypointStylingViewController: NavigationMapViewDelegate {
 }
 
 extension CustomWaypointStylingViewController: NavigationViewControllerDelegate {
-    func navigationViewController(_ navigationViewController: NavigationViewController, waypointStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
-        return customWaypointCircleStyleLayer(identifier: identifier, source: source)
-    }
     
-    func navigationViewController(_ navigationViewController: NavigationViewController, waypointSymbolStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
-        return customWaypointSymbolStyleLayer(identifier: identifier, source: source)
+    func navigationViewController(_ navigationViewController: NavigationViewController, waypointSymbolStyleLayerWithIdentifier identifier: String, waypoints: [Waypoint] , source: NGLSource) -> NGLStyleLayer? {
+        return customWaypointSymbolStyleLayer(style: navigationViewController.navigationMapView?.style,identifier: identifier, waypoints: waypoints, source: source)
     }
     
     func navigationViewController(_ navigationViewController: NavigationViewController, shapeFor waypoints: [Waypoint], legIndex: Int) -> NGLShape? {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2283E5F62A89CE7400496FB3 /* CustomizeWaypointSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283E5F52A89CE7400496FB3 /* CustomizeWaypointSymbol.swift */; };
+		22E7CBC82A8B804C0001EF99 /* CustomWaypointStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E7CBC72A8B804C0001EF99 /* CustomWaypointStyle.swift */; };
 		4190C4982A83E7BA00C41DD2 /* Arrive-Waypoints-Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4190C4962A83E7BA00C41DD2 /* Arrive-Waypoints-Destination.swift */; };
 		4190C4992A83E7BA00C41DD2 /* WaypointConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4190C4972A83E7BA00C41DD2 /* WaypointConfirmationViewController.swift */; };
 		41945873299C9DEE005084B3 /* Nbmap.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41945869299C9DD8005084B3 /* Nbmap.xcframework */; };
@@ -95,6 +97,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2283E5F52A89CE7400496FB3 /* CustomizeWaypointSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeWaypointSymbol.swift; sourceTree = "<group>"; };
+		22E7CBC72A8B804C0001EF99 /* CustomWaypointStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWaypointStyle.swift; sourceTree = "<group>"; };
 		4190C4962A83E7BA00C41DD2 /* Arrive-Waypoints-Destination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Arrive-Waypoints-Destination.swift"; sourceTree = "<group>"; };
 		4190C4972A83E7BA00C41DD2 /* WaypointConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaypointConfirmationViewController.swift; sourceTree = "<group>"; };
 		41945869299C9DD8005084B3 /* Nbmap.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Nbmap.xcframework; path = Carthage/Build/Nbmap.xcframework; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 				5E7342292A1231730068A534 /* CustomizeMapStyleViewController.swift */,
 				5E73422B2A1236E40068A534 /* InterceptClickEventViewController.swift */,
 				41AE0F6E2A1CA8CA00E6233F /* Simulation-Mode.swift */,
+				2283E5F52A89CE7400496FB3 /* CustomizeWaypointSymbol.swift */,
+				22E7CBC72A8B804C0001EF99 /* CustomWaypointStyle.swift */,
 			);
 			path = "navigation-ios-demo";
 			sourceTree = "<group>";
@@ -444,8 +450,10 @@
 				41F4D8D8296FC7BB008131C4 /* AppDelegate.swift in Sources */,
 				41F4D8DA296FC7BB008131C4 /* SceneDelegate.swift in Sources */,
 				41AE0F1A29EFCF7A00E6233F /* CustomBottomBannerView.swift in Sources */,
+				2283E5F62A89CE7400496FB3 /* CustomizeWaypointSymbol.swift in Sources */,
 				41AE0F2E29F17CBD00E6233F /* Custom-Navigation-LocationSource.swift in Sources */,
 				41AE0F6F2A1CA8CA00E6233F /* Simulation-Mode.swift in Sources */,
+				22E7CBC82A8B804C0001EF99 /* CustomWaypointStyle.swift in Sources */,
 				41AE0F2929F1767300E6233F /* Custom-Location-Source.swift in Sources */,
 				41AE0F1429EEA5F400E6233F /* Custom-Voice-Instruction.swift in Sources */,
 				41AE0F1629EEA6E500E6233F /* Custom-Waypoint-Styling.swift in Sources */,
