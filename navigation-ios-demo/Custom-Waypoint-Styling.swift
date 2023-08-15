@@ -46,7 +46,10 @@ class CustomWaypointStylingViewController: UIViewController {
         self.navigationMapView = NavigationMapView(frame: view.bounds)
         
         navigationMapView?.userTrackingMode = .follow
+        // Set delegate for navigation map view
         navigationMapView?.navigationMapDelegate = self
+        // Set delegate for NGLMapView
+        navigationMapView?.delegate = self
         setupStartButton()
         requestRoutes()
         
@@ -146,33 +149,71 @@ class CustomWaypointStylingViewController: UIViewController {
     }
     
 }
-
+// MARK: - Implement NavigationViewControllerDelegate to custom waypoint and receive callback from map screen
 extension CustomWaypointStylingViewController: NavigationMapViewDelegate {
     
-    func navigationMapView(_ mapView: NavigationMapView, waypointStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
-        return customWaypointCircleStyleLayer(identifier: identifier, source: source)
-    }
+//    func navigationMapView(_ mapView: NavigationMapView, routeStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
+//        return customWaypointCircleStyleLayer(identifier: identifier, source: source)
+//    }
     
-    func navigationMapView(_ mapView: NavigationMapView, waypointSymbolStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
-        return customWaypointSymbolStyleLayer(identifier: identifier, source: source)
-    }
+//    func navigationMapView(_ mapView: NavigationMapView, waypointSymbolStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
+//        return customWaypointSymbolStyleLayer(identifier: identifier, source: source)
+//    }
     
     func navigationMapView(_ mapView: NavigationMapView, shapeFor waypoints: [Waypoint], legIndex: Int) -> NGLShape? {
         return customShape(for: waypoints, legIndex: legIndex)
     }
-}
-
-extension CustomWaypointStylingViewController: NavigationViewControllerDelegate {
-    func navigationViewController(_ navigationViewController: NavigationViewController, waypointStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
-        return customWaypointCircleStyleLayer(identifier: identifier, source: source)
+    
+    func navigationMapView(_ mapView: NavigationMapView, didSelect waypoint: Waypoint) {
+        let alert = UIAlertController(title: "Did select waypoint", message: "\(waypoint.description)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
     
-    func navigationViewController(_ navigationViewController: NavigationViewController, waypointSymbolStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
-        return customWaypointSymbolStyleLayer(identifier: identifier, source: source)
+    func navigationMapView(_ mapView: NavigationMapView, didSelect route: Route) {
+        let alert = UIAlertController(title: "Did select route.", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
+    
+}
+
+// MARK: - Implement NGLMapViewDelegate to receive click marker event from the  map screen
+extension CustomWaypointStylingViewController: NGLMapViewDelegate {
+    func mapView(_ mapView: NGLMapView, didSelect annotation: NGLAnnotation) {
+        let alert = UIAlertController(title: "Did select marker \(annotation.description).", message: "\(annotation.coordinate)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
+
+// MARK: - Implement NavigationViewControllerDelegate to custom waypoint and receive callback from navigation screen
+extension CustomWaypointStylingViewController: NavigationViewControllerDelegate {
+//    func navigationViewController(_ navigationViewController: NavigationViewController, waypointStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
+//        return customWaypointCircleStyleLayer(identifier: identifier, source: source)
+//    }
+//
+//    func navigationViewController(_ navigationViewController: NavigationViewController, waypointSymbolStyleLayerWithIdentifier identifier: String, source: NGLSource) -> NGLStyleLayer? {
+//        return customWaypointSymbolStyleLayer(identifier: identifier, source: source)
+//    }
     
     func navigationViewController(_ navigationViewController: NavigationViewController, shapeFor waypoints: [Waypoint], legIndex: Int) -> NGLShape? {
         return customShape(for: waypoints, legIndex: legIndex)
     }
+    
+    func navigationViewController(_ navigationViewController: NavigationViewController, didSelect waypoint: Waypoint) {
+        let alert = UIAlertController(title: "Did select at \(waypoint.name ?? "Unknown").", message: "\(waypoint.description)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        navigationViewController.present(alert, animated: true, completion: nil)
+    }
+    
+    func navigationViewController(_ navigationViewController: NavigationViewController, didSelect annotation: NGLAnnotation) {
+        let alert = UIAlertController(title: "Did select marker: \(annotation.description).", message: "Coordinate : \(annotation.coordinate)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        navigationViewController.present(alert, animated: true, completion: nil)
+    }
+    
+  
     
 }

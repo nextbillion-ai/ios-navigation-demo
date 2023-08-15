@@ -75,7 +75,7 @@ class RouteLinesStylingViewController: UIViewController {
         navigationMapView = NavigationMapView(frame: view.bounds)
         navigationMapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         navigationMapView.navigationMapDelegate = self
-        navigationMapView.userTrackingMode = .follow
+//        navigationMapView.userTrackingMode = .follow
         
         view.addSubview(navigationMapView)
     }

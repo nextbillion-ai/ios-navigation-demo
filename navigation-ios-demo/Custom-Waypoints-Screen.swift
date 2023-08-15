@@ -40,22 +40,15 @@ class CustomWaypointScreenController: UIViewController {
 }
 
 extension CustomWaypointScreenController : NavigationViewControllerDelegate {
-    func navigationViewController(_ navigationViewController: NavigationViewController, didArriveAt waypoint: Waypoint) -> Bool {
-        let isFinalLeg = navigationViewController.navigationService.routeProgress.isFinalLeg
-        if isFinalLeg {
-            return true
-        }
-        
-        let alert = UIAlertController(title: "Arrived at \(waypoint.name ?? "Unknown").", message: "Would you like to continue?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-            // Begin the next leg once the driver confirms
-            guard !isFinalLeg else { return }
-            navigationViewController.navigationService.router.routeProgress.legIndex += 1
-            navigationViewController.navigationService.start()
-        }))
+    /**
+     Call back for user arrvive each waypoints and dextination
+     */
+    func navigationViewController(_ navigationViewController: NavigationViewController, didArriveAt waypoint: Waypoint) {
+      
+        let alert = UIAlertController(title: "Arrived at \(waypoint.name ?? "Unknown").", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
         navigationViewController.present(alert, animated: true, completion: nil)
-        
-        return false
+
     }
 }
 
