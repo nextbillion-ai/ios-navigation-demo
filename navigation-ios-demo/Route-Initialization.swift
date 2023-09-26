@@ -126,7 +126,7 @@ class RouteInitializationViewController: UIViewController {
                                   shiledLabel: nibName,
                                   intersections: [],
                                   instructionsSpokenAlongStep: instructionsSpokenAlongStep,
-                                  instructionsDisplayedAlongStep: instructionsDisplayedAlongStep, muted: false)
+                                  instructionsDisplayedAlongStep: instructionsDisplayedAlongStep, muted: false,displayInstruction: nil)
         
         return routeStep
     }
