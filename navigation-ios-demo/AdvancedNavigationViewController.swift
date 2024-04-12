@@ -137,7 +137,7 @@ class AdvancedNavigationViewController: UIViewController, NGLMapViewDelegate {
          Set  specifying the primary mode of transportation for the routes.
          This property should be set to `NBNavigationModeCar`, `NBNavigationModeAuto`, `NBNavigationModeBike`, `NBNavigationMode4W`,`NBNavigationMode2W`,`NBNavigationMode6W`, or `NBNavigationModeEscooter`. The default value of this property is `NBNavigationMode4W`,  which specifies driving directions.
          */
-        options.profileIdentifier = NBNavigationMode.mode4W
+        options.profileIdentifier = NBNavigationMode.car
         /**
          Set the  departureTime of the route , By default ,  it sets the current timestamp since from 1970
          */

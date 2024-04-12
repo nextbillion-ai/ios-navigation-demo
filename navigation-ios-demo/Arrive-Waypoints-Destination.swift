@@ -23,7 +23,7 @@ class ArriveNavigationViewController: UIViewController {
         let waypoint = CLLocation(latitude: 37.77640680146262, longitude: -122.43939772352648)
         let destination = CLLocation(latitude: 37.76556957793795, longitude: -122.42409811526268)
        
-        let options = NavigationRouteOptions(waypoints: [Waypoint(location: origin),Waypoint(location: waypoint),Waypoint(location: destination)], profile: .mode4W)
+        let options = NavigationRouteOptions(waypoints: [Waypoint(location: origin),Waypoint(location: waypoint),Waypoint(location: destination)], profile: .car)
        
         Directions.shared.calculate(options) { [weak self] routes, error in
             guard let strongSelf = self else {
