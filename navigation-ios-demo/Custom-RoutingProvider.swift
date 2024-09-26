@@ -1,7 +1,6 @@
 import UIKit
 import NbmapNavigation
 import NbmapCoreNavigation
-import NbmapDirections
 
 class CustomRouteNavigationController: UIViewController , NGLMapViewDelegate {
     
@@ -49,7 +48,7 @@ public struct CustomRequest: NavigationProviderRequest {
 }
 
 class CustomRoutingProvider : RoutingProvider {
-    func calculateRoutes(options: NbmapDirections.RouteOptions, completionHandler: @escaping NbmapDirections.Directions.RouteCompletionHandler) -> NbmapCoreNavigation.NavigationProviderRequest? {
+    func calculateRoutes(options: RouteOptions, completionHandler: @escaping Directions.RouteCompletionHandler) -> NbmapCoreNavigation.NavigationProviderRequest? {
         let task = Directions.shared.calculate(options, completionHandler: completionHandler)
         return CustomRequest(dataTask: task)
         

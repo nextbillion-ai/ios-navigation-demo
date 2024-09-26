@@ -15,8 +15,6 @@
 		41945874299C9DEE005084B3 /* Nbmap.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41945869299C9DD8005084B3 /* Nbmap.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41945876299C9DEF005084B3 /* NbmapCoreNavigation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4194586D299C9DD8005084B3 /* NbmapCoreNavigation.xcframework */; };
 		41945877299C9DEF005084B3 /* NbmapCoreNavigation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4194586D299C9DD8005084B3 /* NbmapCoreNavigation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		41945878299C9DF1005084B3 /* NbmapDirections.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4194586A299C9DD8005084B3 /* NbmapDirections.xcframework */; };
-		41945879299C9DF1005084B3 /* NbmapDirections.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4194586A299C9DD8005084B3 /* NbmapDirections.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4194587A299C9DF2005084B3 /* NbmapNavigation.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4194586B299C9DD8005084B3 /* NbmapNavigation.xcframework */; };
 		4194587B299C9DF2005084B3 /* NbmapNavigation.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4194586B299C9DD8005084B3 /* NbmapNavigation.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4194587C299C9DF4005084B3 /* Turf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4194586C299C9DD8005084B3 /* Turf.xcframework */; };
@@ -89,7 +87,6 @@
 				41945874299C9DEE005084B3 /* Nbmap.xcframework in Embed Frameworks */,
 				41945877299C9DEF005084B3 /* NbmapCoreNavigation.xcframework in Embed Frameworks */,
 				4194587D299C9DF4005084B3 /* Turf.xcframework in Embed Frameworks */,
-				41945879299C9DF1005084B3 /* NbmapDirections.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,7 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				41945876299C9DEF005084B3 /* NbmapCoreNavigation.xcframework in Frameworks */,
-				41945878299C9DF1005084B3 /* NbmapDirections.xcframework in Frameworks */,
 				4194587A299C9DF2005084B3 /* NbmapNavigation.xcframework in Frameworks */,
 				4194587C299C9DF4005084B3 /* Turf.xcframework in Frameworks */,
 				41945873299C9DEE005084B3 /* Nbmap.xcframework in Frameworks */,

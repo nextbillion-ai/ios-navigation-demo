@@ -8,7 +8,6 @@
 import UIKit
 import NbmapNavigation
 import NbmapCoreNavigation
-import NbmapDirections
 import Nbmap
 
 class CustomizeMapStyleViewController: UIViewController, NGLMapViewDelegate {

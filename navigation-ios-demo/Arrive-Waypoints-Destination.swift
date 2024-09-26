@@ -11,7 +11,6 @@ import Foundation
 import UIKit
 import NbmapNavigation
 import NbmapCoreNavigation
-import NbmapDirections
 
 class ArriveNavigationViewController: UIViewController {
     
