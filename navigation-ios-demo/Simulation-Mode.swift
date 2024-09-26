@@ -1,7 +1,6 @@
 import UIKit
 import NbmapNavigation
 import NbmapCoreNavigation
-import NbmapDirections
 
 class SimulationNavigationViewController: UIViewController {
     
