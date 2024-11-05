@@ -57,12 +57,23 @@ extension NavigationDelegatesViewController: NavigationViewControllerDelegate {
     func navigationViewController(_ navigationViewController: NavigationViewController, didUpdate progress: RouteProgress, with location: CLLocation, rawLocation: CLLocation) {
         // Get data when progress update
         let durationRemaining = progress.durationRemaining
+        // ETA format
+        let dateComponentsFormatter = DateComponentsFormatter()
+        dateComponentsFormatter.unitsStyle = .brief
+        var eta: String
+        if  durationRemaining < 60 {
+            eta = "Less than 1 min"
+        } else {
+            eta = dateComponentsFormatter.string(from: durationRemaining) ?? ""
+        }
+        
+        
         let distanceRemaining = progress.distanceRemaining
         let lineSyting = progress.route.shape
         let speed = location.speed
         let bearing = location.course
         let coordinate = location.coordinate
-        print("durationRemaining :\(durationRemaining)")
+        print("eta :\(eta)")
         print("distanceRemaining :\(distanceRemaining)")
         print("speed :\(speed)")
         print("bearing :\(bearing)")
