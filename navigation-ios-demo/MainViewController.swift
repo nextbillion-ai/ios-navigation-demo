@@ -32,7 +32,7 @@ class MainViewController : UITableViewController {
         ViewMode(name: "Custom Waypoint screen", viewCongtroller: CustomWaypointScreenController.self),
         ViewMode(name: "Simulation mode", viewCongtroller: SimulationNavigationViewController.self),
         ViewMode(name: "Arrive waypoints and dextination", viewCongtroller: ArriveNavigationViewController.self),
-        
+        ViewMode(name: "Navigation Delegates", viewCongtroller: NavigationDelegatesViewController.self),
         
     ]
     

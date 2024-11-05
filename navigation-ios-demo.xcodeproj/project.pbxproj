@@ -53,6 +53,7 @@
 		41F4D8EF296FC7BC008131C4 /* navigation_ios_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4D8EE296FC7BC008131C4 /* navigation_ios_demoTests.swift */; };
 		41F4D8F9296FC7BC008131C4 /* navigation_ios_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4D8F8296FC7BC008131C4 /* navigation_ios_demoUITests.swift */; };
 		41F4D8FB296FC7BC008131C4 /* navigation_ios_demoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F4D8FA296FC7BC008131C4 /* navigation_ios_demoUITestsLaunchTests.swift */; };
+		41FA14DE2CD9F028004E5694 /* Navigation-Delegates-ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FA14DD2CD9F00A004E5694 /* Navigation-Delegates-ViewController.swift */; };
 		5E7342262A120F950068A534 /* DrawRouteLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7342252A120F950068A534 /* DrawRouteLineViewController.swift */; };
 		5E7342282A12144B0068A534 /* DrawAlternativeRouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7342272A12144B0068A534 /* DrawAlternativeRouteViewController.swift */; };
 		5E73422A2A1231730068A534 /* CustomizeMapStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7342292A1231730068A534 /* CustomizeMapStyleViewController.swift */; };
@@ -141,6 +142,7 @@
 		41F4D8F4296FC7BC008131C4 /* navigation-ios-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "navigation-ios-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41F4D8F8296FC7BC008131C4 /* navigation_ios_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigation_ios_demoUITests.swift; sourceTree = "<group>"; };
 		41F4D8FA296FC7BC008131C4 /* navigation_ios_demoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigation_ios_demoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		41FA14DD2CD9F00A004E5694 /* Navigation-Delegates-ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation-Delegates-ViewController.swift"; sourceTree = "<group>"; };
 		5E7342252A120F950068A534 /* DrawRouteLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawRouteLineViewController.swift; sourceTree = "<group>"; };
 		5E7342272A12144B0068A534 /* DrawAlternativeRouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawAlternativeRouteViewController.swift; sourceTree = "<group>"; };
 		5E7342292A1231730068A534 /* CustomizeMapStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeMapStyleViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				41F4D8E5296FC7BB008131C4 /* Info.plist */,
 				41AE0F0129EE8B8400E6233F /* MainViewController.swift */,
 				41AE0F0329EE932E00E6233F /* ViewMode.swift */,
+				41FA14DD2CD9F00A004E5694 /* Navigation-Delegates-ViewController.swift */,
 				41AE0F0529EE9B6B00E6233F /* BasicNavigationViewController.swift */,
 				41AE0F0729EE9BF300E6233F /* AdvancedNavigationViewController.swift */,
 				41AE0F0929EE9C2C00E6233F /* Custom-RoutingProvider.swift */,
@@ -459,6 +462,7 @@
 				41AE0F3729F512F200E6233F /* Custom-Waypoints-Screen.swift in Sources */,
 				41AE0F0229EE8B8400E6233F /* MainViewController.swift in Sources */,
 				4190C4982A83E7BA00C41DD2 /* Arrive-Waypoints-Destination.swift in Sources */,
+				41FA14DE2CD9F028004E5694 /* Navigation-Delegates-ViewController.swift in Sources */,
 				41AE0F2C29F178D600E6233F /* Custom-Map-LocationSource.swift in Sources */,
 				41AE0F1C29EFD36100E6233F /* CustomTopBarViewController.swift in Sources */,
 				41AE0F0829EE9BF300E6233F /* AdvancedNavigationViewController.swift in Sources */,
