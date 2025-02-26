@@ -5,6 +5,8 @@ import Nbmap
 
 
 class CustomVoiceInstructionController: UIViewController , VoiceControllerDelegate {
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,10 @@ class CustomVoiceInstructionController: UIViewController , VoiceControllerDelega
     func voiceController(_ voiceController: RouteVoiceController, willSpeak instruction: SpokenInstruction, routeProgress: RouteProgress) -> SpokenInstruction? {
         let modifiedInstruction = SpokenInstruction(distanceAlongStep: instruction.distanceAlongStep, text: instruction.text, ssmlText: instruction.ssmlText, unit: instruction.unit)
         return modifiedInstruction
+    }
+    
+    func voiceController(_ voiceController: NbmapNavigation.RouteVoiceController, spokenInstructionsDidFailWith error: any Error) {
+        
     }
 }
 

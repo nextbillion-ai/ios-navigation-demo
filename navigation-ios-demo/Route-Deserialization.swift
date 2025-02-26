@@ -27,7 +27,7 @@ class RouteDeserializationViewController: UIViewController {
         } catch {
             assert(false, "Invalid data")
         }
-        let route = Route(json: json, waypoints: routeOptions.waypoints, options: routeOptions, countryCode: nil)
+        let route = Route(json: json, waypoints: routeOptions.waypoints, options: routeOptions)
         /**
          Initialize the `NBNavigationService`  with fetched routes , and set the default index to 0 . If `simulationIsEnabled` is `true`  , Set the navigation to simulation mode, otherwise only use simulation navigation mode in tunnels.
          */

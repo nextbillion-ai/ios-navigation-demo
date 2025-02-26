@@ -74,7 +74,7 @@ class RouteInitializationViewController: UIViewController {
                                     .moderate
                                 ])
         
-        let route = Route(json: nil, legs: [routeLeg], distance: distance ,expectedTravelTime: expectedTravelTime,coordinates: departureStepCoordinates ,speechLocale:Locale.current,options:routeOptions)
+        let route = Route(json: [:], legs: [routeLeg], distance: distance ,expectedTravelTime: expectedTravelTime,coordinates: departureStepCoordinates ,speechLocale:Locale.current,options:routeOptions)
         /**
          Initialize the `NBNavigationService`  with fetched routes , and set the default index to 0 . If `simulationIsEnabled` is `true`  , Set the navigation to simulation mode, otherwise only use simulation navigation mode in tunnels.
          */
