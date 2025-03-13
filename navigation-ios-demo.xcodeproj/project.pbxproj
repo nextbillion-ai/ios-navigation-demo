@@ -178,13 +178,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		415C8B4D29B9C78500B8C6F9 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 		41AE0F2129EFD5B900E6233F /* BottomBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,7 +220,6 @@
 		41F4D8CB296FC7BB008131C4 = {
 			isa = PBXGroup;
 			children = (
-				415C8B4D29B9C78500B8C6F9 /* Packages */,
 				41D97695298A348C002042C9 /* Cartfile */,
 				41F4D8D6296FC7BB008131C4 /* navigation-ios-demo */,
 				41F4D8ED296FC7BC008131C4 /* navigation-ios-demoTests */,
@@ -654,7 +646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (

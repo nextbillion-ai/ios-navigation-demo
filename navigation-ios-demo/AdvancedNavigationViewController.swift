@@ -70,7 +70,7 @@ class AdvancedNavigationViewController: UIViewController, NGLMapViewDelegate {
         guard let routes = self.routes else {
             return
         }
-        let navigationService = NBNavigationService(routes: routes, routeIndex: 0)
+        let navigationService = NBNavigationService(routes: routes, routeIndex: 0,simulating: .always)
         
         let navigationOptions = NavigationOptions(navigationService: navigationService)
         let navigationViewController = NavigationViewController(for: routes,navigationOptions: navigationOptions)
