@@ -25,13 +25,13 @@ class MainViewController : UITableViewController {
         ViewMode(name: "Custom navigation camera", viewCongtroller: CustomCameraController.self),
         ViewMode(name: "Custom voice controller", viewCongtroller: CustomVoiceInstructionController.self),
         ViewMode(name: "Custom waypoint styling", viewCongtroller: CustomWaypointStylingViewController.self),
-        ViewMode(name: "Custom Navigation maps tyle", viewCongtroller: CustomizeMapStyleViewController.self),
+        ViewMode(name: "Custom Navigation maps style", viewCongtroller: CustomizeMapStyleViewController.self),
         ViewMode(name: "Route Line Styling", viewCongtroller: RouteLinesStylingViewController.self),
         ViewMode(name: "Custom Location Source", viewCongtroller: CustomLocationSourceViewController.self),
         ViewMode(name: "Custom UI Elements", viewCongtroller: CustomUIElementsViewController.self),
         ViewMode(name: "Custom Waypoint screen", viewCongtroller: CustomWaypointScreenController.self),
         ViewMode(name: "Simulation mode", viewCongtroller: SimulationNavigationViewController.self),
-        ViewMode(name: "Arrive waypoints and dextination", viewCongtroller: ArriveNavigationViewController.self),
+        ViewMode(name: "Arrive waypoints and destination", viewCongtroller: ArriveNavigationViewController.self),
         ViewMode(name: "Navigation Delegates", viewCongtroller: NavigationDelegatesViewController.self),
         
     ]
