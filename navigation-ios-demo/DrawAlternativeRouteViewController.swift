@@ -62,7 +62,7 @@ class DrawAlternativeRouteController: UIViewController, NGLMapViewDelegate {
          We can set an array road class to avoid.  This property can be set to `.toll`,`.ferry`,`.highway`
          By default ,  this property is set to empty
          */
-        options.roadClassesToAvoid = [.toll,.ferry,.highway]
+        options.avoid = ["toll","ferry","highway"]
         /**
          Set up the navigation measurement unit
          This property should be set to `.metric` or `.imperial`

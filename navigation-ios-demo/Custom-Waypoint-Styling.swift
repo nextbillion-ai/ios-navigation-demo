@@ -134,7 +134,7 @@ class CustomWaypointStylingViewController: UIViewController {
         circles.iconOpacity = opacity
         circles.iconImageName = NSExpression(forKeyPath: "name")
         
-        for (waypointIndex, waypoint) in waypoints.enumerated() {
+        for (waypointIndex, _) in waypoints.enumerated() {
             let indexString = String(waypointIndex + 1)
             let circularView = CustomWaypointStyle(frame: CGRect(x: 0, y: 0, width: 24, height: 24), labelText: indexString)
             if let circularImage = circularView.captureScreenshot() {
