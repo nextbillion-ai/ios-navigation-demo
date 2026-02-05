@@ -69,7 +69,6 @@ extension NavigationDelegatesViewController: NavigationViewControllerDelegate {
         
         
         let distanceRemaining = progress.distanceRemaining
-        let lineSyting = progress.route.shape
         let speed = location.speed
         let bearing = location.course
         let coordinate = location.coordinate

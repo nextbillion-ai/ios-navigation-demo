@@ -38,7 +38,7 @@ class CustomLocationViewController: UIViewController ,NGLMapViewDelegate{
         navigationMapView?.addGestureRecognizer(singleTap)
         navigationMapView?.delegate = self
         
-        let navigationViewportDataSource = NavigationViewportDataSource(navigationMapView)
+        let navigationViewportDataSource = NavigationViewportDataSource()
         navigationViewportDataSource.options.followingCameraOptions.zoomUpdatesAllowed = false
         navigationViewportDataSource.followingMobileCamera = NavMapCameraOption()
         navigationMapView.navigationCamera.viewportDataSource = navigationViewportDataSource
@@ -166,7 +166,7 @@ class CustomLocationViewController: UIViewController ,NGLMapViewDelegate{
         options.includesAlternativeRoutes = true
         
         // Avoid road options , Set an array road class to avoid.
-        options.roadClassesToAvoid = []
+        options.avoid = []
         
         // Set the measurement format system
         options.distanceMeasurementSystem = MeasurementSystem.metric

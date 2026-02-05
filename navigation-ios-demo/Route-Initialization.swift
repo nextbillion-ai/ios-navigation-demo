@@ -1,7 +1,7 @@
 import UIKit
 import NbmapNavigation
 import NbmapCoreNavigation
-import Turf
+import NBTurf
 
 class RouteInitializationViewController: UIViewController {
     
