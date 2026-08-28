@@ -23,7 +23,7 @@ class MainViewController : UITableViewController {
         ViewMode(name: "Custom destination marker", viewCongtroller: CustomDestinationMarkerController.self),
         ViewMode(name: "Custom location indicator", viewCongtroller: CustomLocationViewController.self),
         ViewMode(name: "Custom navigation camera", viewCongtroller: CustomCameraController.self),
-        ViewMode(name: "Custom voice controller", viewCongtroller: CustomVoiceInstructionController.self),
+        ViewMode(name: "Custom voice player", viewCongtroller: CustomVoiceInstructionController.self),
         ViewMode(name: "Custom waypoint styling", viewCongtroller: CustomWaypointStylingViewController.self),
         ViewMode(name: "Custom Navigation maps style", viewCongtroller: CustomizeMapStyleViewController.self),
         ViewMode(name: "Route Line Styling", viewCongtroller: RouteLinesStylingViewController.self),
